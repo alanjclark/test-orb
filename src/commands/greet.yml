@@ -12,5 +12,4 @@ steps:
       # environment:
       #   PARAM_TO: <<parameters.to>>
       name: Hello Greeting
-      command: |
-        curl -G "https://circleci.com/api/v2/workflow/$CIRCLE_WORKFLOW_ID" | jq -r '.pipeline_id'
+      command: <<include(scripts/greet.sh)>>
